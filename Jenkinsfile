@@ -70,6 +70,7 @@ pipeline {
                             # npm install serve
                             serve -s build -p 80 &
                             sleep 10
+                            echo $REACT_APP_VERSION
                             npx playwright test  --reporter=html
                         '''
                     }
