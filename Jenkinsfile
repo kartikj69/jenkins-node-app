@@ -123,7 +123,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'YOUR NETLIFY SITE URL'
+                CI_ENVIRONMENT_URL = 'https://nodejs-app-778.netlify.app/'
             }
 
             steps {
