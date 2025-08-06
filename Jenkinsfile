@@ -68,7 +68,7 @@ pipeline {
                     steps {
                         sh '''
                             # npm install serve
-                            serve -s build &
+                            serve -s build -p 80 &
                             sleep 10
                             npx playwright test  --reporter=html
                         '''
