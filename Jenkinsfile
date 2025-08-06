@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NETLIFY_SITE_ID = 'YOUR NETLIFY SITE ID'
+        NETLIFY_SITE_ID = 'f56096f9-e8ee-4519-aafe-37d2f93bfb21'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
         REACT_APP_VERSION = "1.0.$BUILD_ID"
     }
@@ -52,7 +52,7 @@ pipeline {
                     }
                     post {
                         always {
-                            junit 'jest-results/junit.xml'
+                            junit 'test-results/junit.xml'
                         }
                     }
                 }
@@ -67,7 +67,7 @@ pipeline {
 
                     steps {
                         sh '''
-                            # npm install serve
+                            npm install serve
                             serve -s build &
                             sleep 10
                             npx playwright test  --reporter=html
